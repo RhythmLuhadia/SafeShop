@@ -1,0 +1,185 @@
+[
+  {
+    "name": "2-Minute Instant Noodles",
+    "brand": "Maggi",
+    "category": "instant-noodles",
+    "ingredients": [
+      "refined wheat flour",
+      "palm oil",
+      "iodized salt",
+      "wheat gluten",
+      "thickeners",
+      "acidity_regulator",
+      "humectant",
+      "ed spices",
+      "hydrolysed groundnut protein",
+      "sugar",
+      "starch",
+      "thickener",
+      "flavour",
+      "colour"
+    ],
+    "nutrition_text": "0",
+    "parsed": {}
+  },
+  {
+    "name": "Instant Mix - Bajji",
+    "brand": "Udupi Ruchi",
+    "category": "ready-to-cook-eat",
+    "ingredients": [
+      "bengal gram flour",
+      "raw rice flour",
+      "red chilli",
+      "salt",
+      "asafetida",
+      "sodium bicarbonate",
+      "turmeric"
+    ],
+    "nutrition_text": "",
+    "parsed": {}
+  },
+  {
+    "name": "Gold Crunchy Corn & Oat Flakes With Immuno-Nutrients",
+    "brand": "Nestle",
+    "category": "breakfast-cereals",
+    "ingredients": [
+      "degermed maize grits",
+      "whole maize flour",
+      "whole oat flour",
+      "sugar",
+      "minerals",
+      "malt",
+      "glucose syrup",
+      "salt",
+      "acidity_regulator",
+      "generic_emulsifier",
+      "vitamins",
+      "antioxidant",
+      "allergen note oats",
+      "barley",
+      "sulphite",
+      "may wheat",
+      "milk",
+      "soy",
+      "nut",
+      "mustard",
+      "celery",
+      "sesame",
+      "lupin"
+    ],
+    "nutrition_text": "0",
+    "parsed": {}
+  },
+  {
+    "name": "Tomato Sauce - No Added Sugar",
+    "brand": "Veeba",
+    "category": "spreads-sauces-ketchup",
+    "ingredients": [
+      "tomato paste",
+      "sweeteners",
+      "salt",
+      "spices condiments"
+    ],
+    "nutrition_text": "",
+    "parsed": {}
+  },
+  {
+    "name": "Pickle - Mix Vegetable",
+    "brand": "MTR",
+    "category": "pickles-chutney",
+    "ingredients": [
+      "ed vegetables",
+      "salt",
+      "red chilli",
+      "mustard",
+      "acidity_regulator",
+      "asafoetida",
+      "turmeric",
+      "traces of sesame",
+      "store in cool",
+      "dry place"
+    ],
+    "nutrition_text": "",
+    "parsed": {}
+  },
+  {
+    "name": "Rice Palada Payasam Mix",
+    "brand": "Double Horse",
+    "category": "ready-to-cook-eat",
+    "ingredients": [
+      "refined wheat flour",
+      "sugar",
+      "cashew nut",
+      "raisin",
+      "cardamom"
+    ],
+    "nutrition_text": "",
+    "parsed": {}
+  },
+  {
+    "name": "Liquid Filled Cricket Ball Shape Chewing Gum - Red Apple Flavour",
+    "brand": "Center Fruit",
+    "category": "chocolates-candies",
+    "ingredients": [
+      "sugar",
+      "gum base",
+      "liquid glucose",
+      "acidity_regulator",
+      "flavour",
+      "humectant",
+      "red apple fruit",
+      "glazing agents",
+      "generic_emulsifier",
+      "thickeners",
+      "antioxidant",
+      "colour"
+    ],
+    "nutrition_text": "",
+    "parsed": {}
+  },
+  {
+    "name": "Oreo Golden Sandwich Biscuits - Vanilla",
+    "brand": "Cadbury Oreo",
+    "category": "biscuits-cookies",
+    "ingredients": [
+      "refined wheat flour",
+      "sugar",
+      "palm oil",
+      "refined vegetable oil",
+      "edible vegetable fat",
+      "starch",
+      "invert sugar",
+      "milk solids",
+      "leavening agents",
+      "edible salt",
+      "generic_emulsifier",
+      "flavour"
+    ],
+    "nutrition_text": "",
+    "parsed": {}
+  },
+  {
+    "name": "Gift Pack - Royal Heritage",
+    "brand": "Haldiram's",
+    "category": "chocolates-candies",
+    "ingredients": [
+      "rasgulla",
+      "soan papdi",
+      "lite chiwda",
+      "dry fruit",
+      "gol kachauri",
+      "masala kaju",
+      "salted kaju"
+    ],
+    "nutrition_text": "",
+    "parsed": {}
+  },
+  {
+    "name": "Dry Yeast",
+    "brand": "HappyChef",
+    "category": "ready-to-cook-eat",
+    "ingredients": [],
+    "nutrition_text": "",
+    "parsed": {}
+  }
+]

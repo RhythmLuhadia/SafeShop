@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "SafeShop Intelligence",
+  "version": "2.0",
+  "description": "AI-powered Omni-Scanner for product safety. Analyzes ingredients & additives in real time across Amazon, Blinkit, Zepto, Swiggy, and BigBasket.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "http://127.0.0.1:8000/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.bigbasket.com/*", "*://bigbasket.com/*",
+        "*://*.amazon.in/*", "*://amazon.in/*",
+        "*://*.zeptonow.com/*", "*://zeptonow.com/*",
+        "*://*.blinkit.com/*", "*://blinkit.com/*",
+        "*://*.swiggy.com/*", "*://swiggy.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}

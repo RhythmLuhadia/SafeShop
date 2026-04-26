@@ -1,0 +1,32 @@
+NORMALIZATION_MAP = {
+
+    # FLOURS
+    "maida": "refined wheat flour",
+    "refined wheat flour": "refined wheat flour",
+    "wheat flour refined": "refined wheat flour",
+
+    "whole wheat flour": "whole wheat flour",
+    "atta": "whole wheat flour",
+
+    # OILS
+    "palmolein": "palm oil",
+    "palm oil": "palm oil",
+    "edible vegetable oil palm": "palm oil",
+
+    "sunflower oil": "sunflower oil",
+    "soybean oil": "soybean oil",
+
+    # SALT
+    "iodised salt": "salt",
+    "iodized salt": "salt",
+
+    # SUGAR
+    "sucrose": "sugar",
+    "invert sugar": "sugar",
+    "liquid glucose": "glucose syrup",
+
+    # MSG
+    "monosodium glutamate": "ins621",
+    "msg": "ins621",
+
+}
