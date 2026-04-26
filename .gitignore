@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.pkl
+.env
+venv/
+roadmap_aiml_engineer.txt
