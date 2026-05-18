@@ -188,7 +188,7 @@ with open(INPUT, "r", encoding="utf-8") as infile, \
         count += 1
 
 
-print("\n✅ FINAL Processing Complete")
+print("\nFINAL Processing Complete")
 print("Total Products:", count)
 print("Products with Nutrition:", valid_nutrition)
 print("Low Confidence (valid only):", low_conf)

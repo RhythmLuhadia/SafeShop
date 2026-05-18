@@ -18,7 +18,7 @@ NORMALIZATION_MAP = {
     "hydrogenated vegetable fats": "hydrogenated oil",
     "hydrogenated oils": "hydrogenated oil",
 
-    # oils fix 🔥
+    # oils fix 
     "soyabean oil": "refined vegetable oil",
     "sunflower oil": "refined vegetable oil",
     "vegetable oils": "refined vegetable oil",
@@ -226,4 +226,4 @@ if __name__ == "__main__":
             outfile.write(json.dumps(product, ensure_ascii=False) + "\n")
             count += 1
 
-    print("✅ Done:", count)
+    print("Done:", count)

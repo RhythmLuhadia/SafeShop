@@ -121,7 +121,7 @@ with open(INPUT, "r", encoding="utf-8") as infile, \
         count += 1
 
 
-print("\n✅ Processing Complete")
+print("\nProcessing Complete")
 print("Total Products:", count)
 print("Low Confidence Cases:", low_conf)
 print("Output:", OUTPUT)

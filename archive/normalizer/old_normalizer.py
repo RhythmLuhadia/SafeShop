@@ -161,4 +161,4 @@ with open(INPUT, encoding="utf-8") as infile, \
         outfile.write(json.dumps(product, ensure_ascii=False) + "\n")
         count += 1
 
-print("✅ Done:", count)
+print("Done:", count)

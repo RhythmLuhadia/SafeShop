@@ -7,9 +7,9 @@ model = None
 def get_model():
     global model
     if model is None:
-        print("⚡ Loading ML model...")
+        print("Loading ML model...")
         model = joblib.load("health_model_v2.pkl")
-        print("✅ Model loaded")
+        print("Model loaded")
     return model
 
 
@@ -108,7 +108,7 @@ def rule_score(n, a):
 # ===== ML SCORE =====
 def ml_score(n, a):
 
-    model = get_model()  # 🔥 LOAD ONLY WHEN NEEDED
+    model = get_model()  # LOAD ONLY WHEN NEEDED
 
     features = [[
         n.get("energy_kcal") or 0,

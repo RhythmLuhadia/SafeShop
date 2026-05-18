@@ -42,7 +42,7 @@ def extract_strict(keyword, text, unit):
     if match1:
         return safe_float(match1.group(1))
 
-    # 🔥 KEY FIX: handles "Energy (kcal): 425", limit scan
+    # KEY FIX: handles "Energy (kcal): 425", limit scan
     pattern2 = rf"{keyword}[^0-9]{{0,25}}\(?{unit}\)?[^0-9]{{0,15}}([<]?[0-9]+\.?[0-9]*)"
     match2 = re.search(pattern2, text)
 
@@ -111,7 +111,7 @@ def parse_nutrition(text):
     data["carbohydrate_g"] = extract_strict("carbohydrate|carbs", text, "g")
     data["fat_g"] = extract_strict("fat", text, "g")
 
-    # 🔥 FIXED sugar logic
+    # FIXED sugar logic
     data["added_sugar_g"] = extract_strict("added sugars?", text, "g")
     data["sugar_g"] = extract_strict("total sugars?|sugars?", text, "g")
 
@@ -226,6 +226,6 @@ if __name__ == "__main__":
             outfile.write(json.dumps(product, ensure_ascii=False) + "\n")
             count += 1
 
-    print("\n✅ PATCHED PARSER DONE")
+    print("\nPATCHED PARSER DONE")
     print("Total:", count)
     print("Low confidence:", low_conf)

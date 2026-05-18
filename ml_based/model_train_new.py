@@ -43,4 +43,4 @@ with open(INPUT, "r", encoding="utf-8") as f:
 df = pd.DataFrame(rows)
 df.to_csv(OUTPUT, index=False)
 
-print("✅ Dataset ready:", len(df))
+print("Dataset ready:", len(df))

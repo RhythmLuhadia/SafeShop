@@ -19,7 +19,7 @@ with open(INPUT, "r", encoding="utf-8") as infile, \
 
         nutrition_text = str(product.get("nutrition", "")).strip()
 
-        # 🚫 SKIP EMPTY NUTRITION
+        # SKIP EMPTY NUTRITION
         if not nutrition_text or nutrition_text == "0":
             continue
 
@@ -28,7 +28,7 @@ with open(INPUT, "r", encoding="utf-8") as infile, \
         parsed = product.get("parsed_nutrition", {})
         confidence = parsed.get("confidence", 0)
 
-        # ⚠️ LOW CONF CASE
+        # LOW CONF CASE
         if confidence < LOW_CONF_THRESHOLD:
             low_conf_count += 1
 
@@ -36,7 +36,7 @@ with open(INPUT, "r", encoding="utf-8") as infile, \
             outfile.write(json.dumps(product, ensure_ascii=False) + "\n")
 
 # ===== FINAL STATS =====
-print("\n📊 ANALYSIS COMPLETE")
+print("\nANALYSIS COMPLETE")
 print("Valid Nutrition Products:", valid_products)
 print("Low Confidence Cases:", low_conf_count)
 print("Output File:", OUTPUT)

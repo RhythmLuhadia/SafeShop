@@ -187,7 +187,7 @@ if __name__ == "__main__":
             outfile.write(json.dumps(product, ensure_ascii=False) + "\n")
             count += 1
 
-    print("\n✅ FINAL Processing Complete")
+    print("\nFINAL Processing Complete")
     print("Total Products:", count)
     print("Products with Nutrition:", valid_nutrition)
     print("Low Confidence:", low_conf)

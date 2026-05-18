@@ -83,7 +83,7 @@ def add_unique(lst, item):
         lst.append(item)
 
 
-# ===== 🔥 STRONG RESOLVER =====
+# ===== STRONG RESOLVER =====
 def resolve_additive(code):
     code = normalize_code(code)
     visited = set()
@@ -114,7 +114,7 @@ def resolve_additive(code):
     return None
 
 
-# ===== 🔥 UNKNOWN LOGGER =====
+# ===== UNKNOWN LOGGER =====
 def log_unknown_additive(code):
     try:
         with open("knowledge/unknown_additives.txt", "a") as f:
@@ -137,7 +137,7 @@ def analyze_ingredients(ingredients):
         "processed_oils": [],
         "ultra_processed": False,
         "artificial_colors": [],
-        "unknown_additives": []   # 🔥 NEW
+        "unknown_additives": []   # NEW
     }
 
     if not ingredients:
@@ -160,7 +160,7 @@ def analyze_ingredients(ingredients):
         else:
             clean_code = normalize_code(code)
 
-            # 🔥 log unknown
+            # log unknown
             result["unknown_additives"].append(clean_code)
             log_unknown_additive(clean_code)
 

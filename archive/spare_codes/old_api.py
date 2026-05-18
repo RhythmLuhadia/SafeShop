@@ -10,7 +10,7 @@ from final_scoring_engine import final_score
 app = FastAPI()
 
 # =========================
-# ✅ CORS FIX (VERY IMPORTANT)
+# CORS FIX (VERY IMPORTANT)
 # =========================
 app.add_middleware(
     CORSMiddleware,
@@ -103,4 +103,4 @@ def analyze_product(product: ProductInput):
 # =========================
 @app.get("/")
 def root():
-    return {"message": "SafeShop API running 🚀"}
+    return {"message": "SafeShop API running "}

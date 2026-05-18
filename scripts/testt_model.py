@@ -15,7 +15,7 @@ with open(INPUT, "r", encoding="utf-8") as f:
         n = product.get("parsed_nutrition", {})
         a = product.get("ingredient_analysis", {})
 
-        # ❗ skip if no nutrition
+        # skip if no nutrition
         if not n:
             continue
 
@@ -39,7 +39,7 @@ with open(INPUT, "r", encoding="utf-8") as f:
             break
 
 
-print(f"\n✅ Tested {count} products")
+print(f"\nTested {count} products")
 
 from final_scoring_engine import final_score, rule_score, ml_score
 

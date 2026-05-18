@@ -18,54 +18,54 @@ def compress_score(penalty):
     return max(0, min(100, round(score, 2)))
 
 
-# ===== 🔥 HUMANIZER (NEW) =====
+# ===== HUMANIZER (NEW) =====
 def humanize(reason):
 
     mapping = {
-        "Very high sugar density": "🚨 Extremely high sugar (very unhealthy)",
-        "High sugar density": "⚠️ High sugar content",
+        "Very high sugar density": "Extremely high sugar (very unhealthy)",
+        "High sugar density": "High sugar content",
 
-        "Extremely high sodium": "🚨 Extremely high salt (BP risk)",
-        "High sodium": "⚠️ High salt (can increase BP)",
+        "Extremely high sodium": "Extremely high salt (BP risk)",
+        "High sodium": "High salt (can increase BP)",
 
-        "Very high added sugar": "🚨 Very high added sugar",
-        "High added sugar": "⚠️ High added sugar",
+        "Very high added sugar": "Very high added sugar",
+        "High added sugar": "High added sugar",
 
-        "High refined carbohydrates": "⚠️ Refined carbs (low nutrition)",
+        "High refined carbohydrates": "Refined carbs (low nutrition)",
 
-        "High saturated fat": "⚠️ High saturated fat",
-        "Contains trans fat": "🚨 Contains trans fat (heart risk)",
+        "High saturated fat": "High saturated fat",
+        "Contains trans fat": "Contains trans fat (heart risk)",
 
-        "Good fiber": "✅ Good fiber content",
-        "Good protein": "✅ Good protein content",
+        "Good fiber": "Good fiber content",
+        "Good protein": "Good protein content",
 
-        "Insufficient nutrition data": "⚠️ Nutrition data incomplete",
+        "Insufficient nutrition data": "Nutrition data incomplete",
 
-        "Contains MSG": "⚠️ Contains MSG (flavour enhancer)",
-        "Ultra-processed product": "⚠️ Highly processed product",
+        "Contains MSG": "Contains MSG (flavour enhancer)",
+        "Ultra-processed product": "Highly processed product",
 
-        "Contains processed oils": "⚠️ Refined/processed oils used",
-        "Contains artificial sweeteners": "⚠️ Artificial sweeteners present",
-        "Contains artificial colors": "⚠️ Artificial colors present",
+        "Contains processed oils": "Refined/processed oils used",
+        "Contains artificial sweeteners": "Artificial sweeteners present",
+        "Contains artificial colors": "Artificial colors present",
 
-        "Liquid sugar product": "🚨 Liquid sugar (very unhealthy)",
-        "Contains caffeine": "⚠️ Contains caffeine"
+        "Liquid sugar product": "Liquid sugar (very unhealthy)",
+        "Contains caffeine": "Contains caffeine"
     }
 
     # dynamic cases
     if "High-risk additive" in reason:
-        return "🚨 Harmful additive detected"
+        return "Harmful additive detected"
 
     if "Moderate additive" in reason:
-        return "⚠️ Artificial additive present"
+        return "Artificial additive present"
 
     if "Unknown additive" in reason:
-        return "⚠️ Unknown additive present"
+        return "Unknown additive present"
 
     return mapping.get(reason, reason)
 
 
-# ===== 🔥 FLATTEN ADDITIVES =====
+# ===== FLATTEN ADDITIVES =====
 def flatten_additives(additives):
 
     if isinstance(additives, dict):
@@ -259,7 +259,7 @@ def final_score(product_or_n, a=None):
 
     score = compress_score(total_penalty)
 
-    # 🔥 CLEAN + HUMANIZE
+    # CLEAN + HUMANIZE
     final_reasons = list(set(humanize(r) for r in all_explanations))
 
     return score, final_reasons

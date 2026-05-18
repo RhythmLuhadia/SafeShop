@@ -30,54 +30,54 @@ REGULATORY_DISCREPANCIES = {
     "bvo": {"eu": "banned", "usa": "banned", "india": "banned"}, # Brominated Veg Oil
 }
 
-# ===== 🔥 HUMANIZER (NEW) =====
+# ===== HUMANIZER (NEW) =====
 def humanize(reason):
 
     mapping = {
-        "Very high sugar density": "🚨 Extremely high sugar (very unhealthy)",
-        "High sugar density": "⚠️ High sugar content",
+        "Very high sugar density": "Extremely high sugar (very unhealthy)",
+        "High sugar density": "High sugar content",
 
-        "Extremely high sodium": "🚨 Extremely high salt (BP risk)",
-        "High sodium": "⚠️ High salt (can increase BP)",
+        "Extremely high sodium": "Extremely high salt (BP risk)",
+        "High sodium": "High salt (can increase BP)",
 
-        "Very high added sugar": "🚨 Very high added sugar",
-        "High added sugar": "⚠️ High added sugar",
+        "Very high added sugar": "Very high added sugar",
+        "High added sugar": "High added sugar",
 
-        "High refined carbohydrates": "⚠️ Refined carbs (low nutrition)",
+        "High refined carbohydrates": "Refined carbs (low nutrition)",
 
-        "High saturated fat": "⚠️ High saturated fat",
-        "Contains trans fat": "🚨 Contains trans fat (heart risk)",
+        "High saturated fat": "High saturated fat",
+        "Contains trans fat": "Contains trans fat (heart risk)",
 
-        "Good fiber": "✅ Good fiber content",
-        "Good protein": "✅ Good protein content",
+        "Good fiber": "Good fiber content",
+        "Good protein": "Good protein content",
 
-        "Insufficient nutrition data": "⚠️ Nutrition data incomplete",
+        "Insufficient nutrition data": "Nutrition data incomplete",
 
-        "Contains MSG": "⚠️ Contains MSG (flavour enhancer)",
-        "Ultra-processed product": "⚠️ Highly processed product",
+        "Contains MSG": "Contains MSG (flavour enhancer)",
+        "Ultra-processed product": "Highly processed product",
 
-        "Contains processed oils": "⚠️ Refined/processed oils used",
-        "Contains artificial sweeteners": "⚠️ Artificial sweeteners present",
-        "Contains artificial colors": "⚠️ Artificial colors present",
+        "Contains processed oils": "Refined/processed oils used",
+        "Contains artificial sweeteners": "Artificial sweeteners present",
+        "Contains artificial colors": "Artificial colors present",
 
-        "Liquid sugar product": "🚨 Liquid sugar (very unhealthy)",
-        "Contains caffeine": "⚠️ Contains caffeine"
+        "Liquid sugar product": "Liquid sugar (very unhealthy)",
+        "Contains caffeine": "Contains caffeine"
     }
 
     # dynamic cases
     if "High-risk additive" in reason:
-        return "🚨 Harmful additive detected"
+        return "Harmful additive detected"
 
     if "Moderate additive" in reason:
-        return "⚠️ Artificial additive present"
+        return "Artificial additive present"
 
     if "Unknown additive" in reason:
-        return "⚠️ Unknown additive present"
+        return "Unknown additive present"
 
     return mapping.get(reason, reason)
 
 
-# ===== 🔥 FLATTEN ADDITIVES =====
+# ===== FLATTEN ADDITIVES =====
 def flatten_additives(additives):
 
     if isinstance(additives, dict):
@@ -259,7 +259,7 @@ def final_score(product_or_n, a=None, allergies=None, region="global"):
     total_penalty = 0
     all_explanations = []
 
-    # 🔥 REGULATORY COMPLIANCE CHECK
+    # REGULATORY COMPLIANCE CHECK
     region_lower = region.lower().strip()
     if region_lower != "global" and a.get("additives"):
         flat_add = flatten_additives(a["additives"])
@@ -269,12 +269,12 @@ def final_score(product_or_n, a=None, allergies=None, region="global"):
                 reg_status = REGULATORY_DISCREPANCIES[code].get(region_lower, "allowed")
                 if reg_status == "banned":
                     total_penalty += 300
-                    all_explanations.append(f"🚨 BANNED IN {region.upper()}: Contains {code.upper()}")
+                    all_explanations.append(f"BANNED IN {region.upper()}: Contains {code.upper()}")
                 elif reg_status == "warning_required":
                     total_penalty += 150
-                    all_explanations.append(f"⚠️ STRICT WARNING (per {region.upper()} law): Contains {code.upper()}")
+                    all_explanations.append(f"STRICT WARNING (per {region.upper()} law): Contains {code.upper()}")
 
-    # 🔥 ALLERGY CHECK
+    # ALLERGY CHECK
     if allergies and ingredients_list:
         # Also check raw text if provided
         raw_text = str(n.get("raw_text", "")).lower()
@@ -284,7 +284,7 @@ def final_score(product_or_n, a=None, allergies=None, region="global"):
             in_ingredients = any(allergen_lower in str(ing).lower() for ing in ingredients_list)
             if in_ingredients or allergen_lower in raw_text:
                 total_penalty += 1000
-                all_explanations.append(f"🚨 SEVERE: Contains {allergen} (Allergy Risk)")
+                all_explanations.append(f"SEVERE: Contains {allergen} (Allergy Risk)")
 
     s, exp = nutrient_score(n)
     total_penalty += abs(s)
@@ -300,7 +300,7 @@ def final_score(product_or_n, a=None, allergies=None, region="global"):
 
     score = compress_score(total_penalty)
 
-    # 🔥 CLEAN + HUMANIZE
+    # CLEAN + HUMANIZE
     final_reasons = list(set(humanize(r) for r in all_explanations))
     # Ensure allergy warnings always show up by filtering out duplicates correctly
     # (set already does this, but allergy warnings bypass the humanizer mapping)

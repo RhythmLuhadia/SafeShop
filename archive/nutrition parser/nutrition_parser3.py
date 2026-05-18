@@ -63,7 +63,7 @@ def parse_nutrition(text):
     data["saturated_fat_g"] = extract_value("saturated", text, "g")
     data["trans_fat_g"] = extract_value("trans", text, "g")
 
-    # ✅ FIXED HERE
+    # FIXED HERE
     data["fiber_g"] = extract_value("(?:fibre|fiber)", text, "g")
 
     data["sodium_mg"] = extract_value("sodium", text, "mg")
@@ -105,7 +105,7 @@ with open(INPUT, "r", encoding="utf-8") as infile, \
         # DEBUG LOW CONFIDENCE
         if parsed.get("confidence", 0) < 0.5:
             low_conf_count += 1
-            print("\n⚠️ LOW CONF SAMPLE:")
+            print("\nLOW CONF SAMPLE:")
             print(nutrition_text[:120])
 
         outfile.write(json.dumps(product, ensure_ascii=False) + "\n")
@@ -114,7 +114,7 @@ with open(INPUT, "r", encoding="utf-8") as infile, \
 
 
 # ===== FINAL OUTPUT =====
-print("\n✅ Processing Complete")
+print("\nProcessing Complete")
 print("Total Products:", count)
 print("Low Confidence Cases:", low_conf_count)
 print("Output File:", OUTPUT)

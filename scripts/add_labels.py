@@ -61,6 +61,6 @@ df["label"] = df.apply(rule_score, axis=1)
 # save
 df.to_csv(OUTPUT, index=False)
 
-print("✅ Labels added")
+print("Labels added")
 print("Sample:")
 print(df[["sodium", "added_sugar", "label"]].head())

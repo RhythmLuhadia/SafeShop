@@ -50,4 +50,4 @@ final_db = generate_db(data)
 with open(OUTPUT, "w", encoding="utf-8") as f:
     json.dump(final_db, f, indent=2, ensure_ascii=False)
 
-print(f"✅ Generated DB with {len(final_db)} entries → {OUTPUT}")
+print(f"Generated DB with {len(final_db)} entries → {OUTPUT}")

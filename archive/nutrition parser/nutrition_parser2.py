@@ -117,7 +117,7 @@ with open(INPUT, "r", encoding="utf-8") as infile, \
         # ===== DEBUG LOW CONFIDENCE =====
         if parsed.get("confidence", 0) < 0.5:
             low_conf_count += 1
-            print("\n⚠️ LOW CONFIDENCE:")
+            print("\nLOW CONFIDENCE:")
             print(nutrition_text[:120])
 
         outfile.write(json.dumps(product, ensure_ascii=False) + "\n")
@@ -126,6 +126,6 @@ with open(INPUT, "r", encoding="utf-8") as infile, \
 
 
 # ===== FINAL STATS =====
-print("\n✅ Processing Complete")
+print("\nProcessing Complete")
 print("Total Products:", count)
 print("Low Confidence Cases:", low_conf_count)

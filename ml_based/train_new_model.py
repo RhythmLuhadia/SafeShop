@@ -26,10 +26,10 @@ model.fit(X_train, y_train)
 # evaluate
 score = model.score(X_test, y_test)
 
-print("✅ Model trained")
+print("Model trained")
 print("R2 Score:", round(score, 3))
 
 # save
 joblib.dump(model, MODEL_OUT)
 
-print("📦 Model saved as:", MODEL_OUT)
+print("Model saved as:", MODEL_OUT)

@@ -182,7 +182,7 @@ def analyze_product(product: ProductInput):
         "reasons": list(set(reasons)),
         "better_alternatives": better_alternatives,
 
-        # 🔥 FIX: needed for frontend graphs
+        # FIX: needed for frontend graphs
         "parsed_nutrition": parsed_nutrition,
 
         "health_flags": health_flags,

@@ -70,9 +70,9 @@ def run_pipeline():
                 errors += 1
                 print("Error:", e)
 
-    print(f"\n✅ Pipeline complete: {count} products processed")
-    print(f"⚠️ Errors: {errors}")
-    print(f"📦 Output saved to: {OUTPUT}")
+    print(f"\nPipeline complete: {count} products processed")
+    print(f"Errors: {errors}")
+    print(f"Output saved to: {OUTPUT}")
 
 
 if __name__ == "__main__":

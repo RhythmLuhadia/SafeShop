@@ -23,12 +23,12 @@ def rule_score(n, a):
     raw_text = str(n.get("raw_text", "")).lower()
 
     # =========================
-    # 🔴 CORE PENALTIES
+    # CORE PENALTIES
     # =========================
 
     
 
-    # 🚨 sugar dominance (core fix)
+    # sugar dominance (core fix)
     if energy > 0:
         sugar_ratio = (total_sugar * 4) / energy
 
@@ -79,7 +79,7 @@ def rule_score(n, a):
     score -= len(a.get("sweeteners", [])) * 5
 
     # =========================
-    # 🚨 SPECIAL CASE FIXES
+    # SPECIAL CASE FIXES
     # =========================
 
     # liquid sugar drinks (Red Bull fix)
@@ -109,7 +109,7 @@ def rule_score(n, a):
         score -= 10
 
     # =========================
-    # 🟢 BONUSES
+    # BONUSES
     # =========================
 
     if fiber > 5:
